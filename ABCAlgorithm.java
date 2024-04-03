@@ -126,9 +126,9 @@ public class ABCAlgorithm {
     private static double evaluate(double[] foodSource) {
         // Define the objective function to be optimized
         // In this example, let's say we want to maximize the function f(x, y) = -(x^2 + y^2)
-        double x = foodSource[0];
-        double y = foodSource[1];
-        return -(x * x + y * y);
+        double x = foodSource[0];  //First dimension
+        double y = foodSource[1];  //second dimension
+        return -(x * x + y * y);   //Evaluates the fitness of the given food source based on an objective function.
     }
 
     private static double findBestFoodSource(double[][] foodSources) {
