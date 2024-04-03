@@ -13,13 +13,13 @@ public class ABCAlgorithm {
 
     private static Random rand = new Random(); //Create the rand object from the Random class
 
-    public static void main(String[] args) {
-        // Initialize food sources
-        double[][] foodSources = initializeFoodSources();  //Two Dimensional array that holds double float point values
+    public static void main(String[] args) {  //Entry point method
+        // Initialize the food sources environment
+        double[][] foodSources = initializeFoodSources();  //Two Dimensional array that holds a type of double float point values
 
         // ABC Algorithm
-        int cycle = 0;  //
-        while (cycle < MAX_CYCLES) {
+        int cycle = 0;  //type integer variable identifier declaration and assign an initial value of 0
+        while (cycle < MAX_CYCLES) {  //loop the total number of times which is set at a constast value of 100
             // Employed bees phase where each employed bee explores a solution and evaluates its quality
             employedBeesPhase(foodSources);  //Call the employedBeesPhase static method and pass in the two dimensional array the food environment argument
 
