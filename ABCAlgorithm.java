@@ -2,7 +2,7 @@ import java.util.Random;  //import the Random class from the package java.until
 
 /*The ABC Algorithm stands for Artificial Bee Colony Algorithm.
 It's a nature-inspired optimization algorithm that simulates the foraging behavior of honeybees.
- The algorithm was proposed by Derviş Karaboğa in 2005
+The algorithm was proposed by Derviş Karaboğa in 2005
 */
 
 public class ABCAlgorithm {
@@ -96,12 +96,19 @@ public class ABCAlgorithm {
         }
     }
 
+    /*It iterates through each food source in the colony.
+     For each food source, it evaluates its fitness value using the evaluate method.
+     If the fitness value exceeds the limit (LIMIT), indicating that the food source
+     has not improved for a significant number of iterations, it is considered to be abandoned.
+     The abandoned food source is then replaced with a new solution by generating random values
+     within the specified bounds (MIN_VAL and MAX_VAL) for each dimension of the problem.
+     */
     private static void scoutBeesPhase(double[][] foodSources) {
-        for (int i = 0; i < FOOD_SOURCES; i++) {
-            double value = evaluate(foodSources[i]);
-            if (value > LIMIT) {
-                foodSources[i][0] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();
-                foodSources[i][1] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();
+        for (int i = 0; i < FOOD_SOURCES; i++) {      //FOOD_SOURCES The number of food sources in the colony.
+            double value = evaluate(foodSources[i]);  //evaluate: A method that evaluates the fitness value of a given solution
+            if (value > LIMIT) {  //The threshold value indicating when a food source should be abandoned.
+                foodSources[i][0] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();  //The lower and upper bounds of the search space for each dimension of the problem.
+                foodSources[i][1] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();  //Generates a random double value between 0.0 (inclusive) and 1.0 (exclusive).
             }
         }
     }
