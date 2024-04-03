@@ -35,8 +35,8 @@ public class ABCAlgorithm {
         }
 
         // Find the best food source
-        double bestFoodSource = findBestFoodSource(foodSources);
-        System.out.println("Best food source found: " + bestFoodSource);
+        double bestFoodSource = findBestFoodSource(foodSources);  //Call the static method findBestFoodSource pass in the two dimensional array the food environment argument
+        System.out.println("Best food source found: " + bestFoodSource);  //Print to the screen the value in the variable bestFoodSource
     }
 
     //Method to randomize the environment where the food sources will be located
