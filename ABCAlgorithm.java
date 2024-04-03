@@ -6,11 +6,11 @@ The algorithm was proposed by Derviş Karaboğa in 2005
 */
 
 public class ABCAlgorithm {
-    private static final int FOOD_SOURCES = 50; //Constant for the number of food sources
+    private static final int FOOD_SOURCES = 50; //Constant for the number of food sources in the environment
     private static final int MAX_CYCLES = 100;  //Constant for the number of cycles interations
-    private static final int LIMIT = 10; // Constant for the limit for abandonment
-    private static final double MIN_VAL = -10; // Constant for the Lower bound for food source
-    private static final double MAX_VAL = 10; // Constant Upper bound for food source
+    private static final int LIMIT = 10;        // Constant for the limit for abandonment
+    private static final double MIN_VAL = -10;  // Constant for the Lower bound for food source
+    private static final double MAX_VAL = 10;   // Constant Upper bound for food source
 
     private static Random rand = new Random(); //Create the rand object from the Random class
 
@@ -104,7 +104,7 @@ public class ABCAlgorithm {
         }
     }
 
-    /*It iterates through each food source in the colony.
+    /*This method iterates through each food source in the colony.
      For each food source, it evaluates its fitness value using the evaluate method.
      If the fitness value exceeds the limit (LIMIT), indicating that the food source
      has not improved for a significant number of iterations, it is considered to be abandoned.
@@ -120,7 +120,9 @@ public class ABCAlgorithm {
             }
         }
     }
-
+    /*
+   This method defines a method evaluate(double[] foodSource) which evaluates the fitness of a given food source.
+    */
     private static double evaluate(double[] foodSource) {
         // Define the objective function to be optimized
         // In this example, let's say we want to maximize the function f(x, y) = -(x^2 + y^2)
