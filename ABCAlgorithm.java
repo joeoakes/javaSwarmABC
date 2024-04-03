@@ -1,13 +1,17 @@
-import java.util.Random;
+import java.util.Random;  //import the Random class
+
+/*The ABC Algorithm stands for Artificial Bee Colony Algorithm
+It's a nature-inspired optimization algorithm that simulates the foraging behavior of honeybees.
+*/
 
 public class ABCAlgorithm {
-    private static final int FOOD_SOURCES = 50;
-    private static final int MAX_CYCLES = 100;
+    private static final int FOOD_SOURCES = 50; //Constant
+    private static final int MAX_CYCLES = 100;  //Constant
     private static final int LIMIT = 10; // Limit for abandonment
     private static final double MIN_VAL = -10; // Lower bound for food source
     private static final double MAX_VAL = 10; // Upper bound for food source
 
-    private static Random rand = new Random();
+    private static Random rand = new Random(); //Create the rand object from the Random class
 
     public static void main(String[] args) {
         // Initialize food sources
@@ -16,13 +20,13 @@ public class ABCAlgorithm {
         // ABC Algorithm
         int cycle = 0;
         while (cycle < MAX_CYCLES) {
-            // Employed bees phase
+            // Employed bees phase where each employed bee explores a solution and evaluates its quality
             employedBeesPhase(foodSources);
 
-            // Onlooker bees phase
+            // Onlooker bees phase where onlooker bees select solutions based on the information from employed bees.
             onlookerBeesPhase(foodSources);
 
-            // Scout bees phase
+            // Scout bees phase to handle stagnation
             scoutBeesPhase(foodSources);
 
             cycle++;
