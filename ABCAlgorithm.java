@@ -18,19 +18,19 @@ public class ABCAlgorithm {
         double[][] foodSources = initializeFoodSources();  //Two Dimensional array that holds double float point values
 
         // ABC Algorithm
-        int cycle = 0;
+        int cycle = 0;  //
         while (cycle < MAX_CYCLES) {
             // Employed bees phase where each employed bee explores a solution and evaluates its quality
-            employedBeesPhase(foodSources);
+            employedBeesPhase(foodSources);  //Call the employedBeesPhase static method and pass in the two dimensional array the food environment argument
 
             // Onlooker bees phase where onlooker bees select solutions based on the information from employed bees.
-            onlookerBeesPhase(foodSources);
+            onlookerBeesPhase(foodSources); //Call the onlookerBeesPhase static method and pass in the two dimensional array the food environment argument
 
             // Scout bees phase to handle stagnation
             //If a certain number of iterations pass without any improvement, scout bees are deployed to explore new solutions randomly.
-            scoutBeesPhase(foodSources);
+            scoutBeesPhase(foodSources); //Call the scoutBeesPhase static method and pass in the two dimensional array the food environment argument
 
-            cycle++;
+            cycle++;  //Increment the cycle value by 1
         }
 
         // Find the best food source
