@@ -39,12 +39,20 @@ public class ABCAlgorithm {
         System.out.println("Best food source found: " + bestFoodSource);  //Print to the screen the value in the variable bestFoodSource
     }
 
-    //Method to randomize the environment where the food sources will be located
+    /*
+    Method to randomize the environment where the food sources will be located
+    It creates a two-dimensional array foodSources with dimensions FOOD_SOURCES by 2.
+    Each row of the array represents a food source, and each column represents a dimension of the problem.
+    It iterates through each row of the foodSources array.
+    For each row, it assigns a random value within the specified bounds (MIN_VAL and MAX_VAL) for each
+    dimension of the problem. The random values are generated using rand.nextDouble().
+    Finally, it returns the initialized foodSources array containing the randomly generated initial solutions.
+     */
     private static double[][] initializeFoodSources() {
         double[][] foodSources = new double[FOOD_SOURCES][2];  //Two Dimensional array 50 X 2
         for (int i = 0; i < FOOD_SOURCES; i++) {
-            foodSources[i][0] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();
-            foodSources[i][1] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();
+            foodSources[i][0] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();  //The lower and upper bounds of the search space for each dimension of the problem.
+            foodSources[i][1] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();  //Generates a random double value between 0.0 (inclusive) and 1.0 (exclusive).
         }
         return foodSources;
     }
