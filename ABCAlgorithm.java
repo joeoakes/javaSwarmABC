@@ -3,6 +3,15 @@ import java.util.Random;  //import the Random class from the package java.until
 /*The ABC Algorithm stands for Artificial Bee Colony Algorithm.
 It's a nature-inspired optimization algorithm that simulates the foraging behavior of honeybees.
 The algorithm was proposed by Derviş Karaboğa in 2005
+
+Repeat
+  Each employed bee goes to a food source in her memory and determines a closest source, then evaluates its nectar amount and dances in the hive
+  Each onlooker watches the dance of employed bees and chooses one of their sources depending on the dances, and then goes to that source.
+  After choosing a neighbour around that, she evaluates its nectar amount. The employed bee whose food source has been abandoned becomes a scout
+  and starts to search for finding a new food source.  Abandoned food sources are determined and are replaced with the new food sources discovered by scouts.
+  The best food source found so far is registered.
+Until
+
 */
 public class ABCAlgorithm {
     private static final int FOOD_SOURCES = 50; //Constant for the number of food sources in the environment
