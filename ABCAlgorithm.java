@@ -163,6 +163,14 @@ public class ABCAlgorithm {
         return -(x * x + y * y);   //Evaluates the fitness of the given food source based on an objective function.
     }
 
+    /*
+    It initializes bestFitness to negative infinity to ensure that any valid fitness value found during iteration will be greater than the initialized value.
+    It initializes bestFoodSource to 0, which is an arbitrary initial value. This variable will store the best food source found so far.
+    It iterates through each food source in the colony.
+    For each food source, it evaluates its fitness value using the evaluate method.
+    If the fitness value of the current food source is greater than the current bestFitness, it updates bestFitness to the new fitness value and bestFoodSource to the value of the first dimension of the current food source.
+    Finally, it returns the value of the best food source found.
+     */
     private static double findBestFoodSource(double[][] foodSources) {
         double bestFitness = Double.NEGATIVE_INFINITY;
         double bestFoodSource = 0;
