@@ -15,7 +15,7 @@ public class ABCAlgorithm {
 
     public static void main(String[] args) {
         // Initialize food sources
-        double[][] foodSources = initializeFoodSources();
+        double[][] foodSources = initializeFoodSources();  //Two Dimensional array that holds double float point values
 
         // ABC Algorithm
         int cycle = 0;
@@ -27,6 +27,7 @@ public class ABCAlgorithm {
             onlookerBeesPhase(foodSources);
 
             // Scout bees phase to handle stagnation
+            //If a certain number of iterations pass without any improvement, scout bees are deployed to explore new solutions randomly.
             scoutBeesPhase(foodSources);
 
             cycle++;
@@ -37,8 +38,9 @@ public class ABCAlgorithm {
         System.out.println("Best food source found: " + bestFoodSource);
     }
 
+    //Method to randomize the environment where the food sources will be located
     private static double[][] initializeFoodSources() {
-        double[][] foodSources = new double[FOOD_SOURCES][2];
+        double[][] foodSources = new double[FOOD_SOURCES][2];  //Two Dimensional array 50 X 2
         for (int i = 0; i < FOOD_SOURCES; i++) {
             foodSources[i][0] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();
             foodSources[i][1] = MIN_VAL + (MAX_VAL - MIN_VAL) * rand.nextDouble();
